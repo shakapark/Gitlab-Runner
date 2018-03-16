@@ -1,0 +1,5 @@
+FROM alpine-v10.6.0-rc1
+
+RUN apk add -- update ansible
+
+CMD ["run", "--user=gitlab-runner", "--working-directory=/home/gitlab-runner"]
