@@ -1,6 +1,6 @@
 FROM gitlab/gitlab-runner:alpine-v10.6.0-rc1
 
-RUN apk add --update ansible
+RUN apk add --update ansible sshpass
 
 ADD ansible_hosts /etc
 
