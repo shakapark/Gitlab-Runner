@@ -1,6 +1,6 @@
 FROM gitlab/gitlab-runner:alpine-v10.6.0-rc1
 
-RUN apk add --update ansible openssh sshpass
+RUN apk add --update ansible openssh sshpass docker
 
 RUN mkdir /etc/ansible
 
