@@ -1,4 +1,4 @@
-FROM gitlab/gitlab-runner:alpine-v10.6.0-rc1
+FROM gitlab/gitlab-runner:ubuntu-v10.8.0-rc3
 
 RUN apt-get update && \
 	apt-get install apt-transport-https ca-certificates curl software-properties-common && \
