@@ -1,8 +1,12 @@
 FROM gitlab/gitlab-runner:alpine-v10.6.0-rc1
 
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories && \
-        apt update && \
-	apt install ansible openssh sshpass docker sudo
+RUN apt update && \
+	apt install apt-transport-https ca-certificates curl software-properties-common && \
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
+	add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
+	apt update && \
+	apt install docker-ce
+#RUN apt install ansible openssh sshpass docker sudo
 
 RUN mkdir /etc/ansible
 
