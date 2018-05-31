@@ -6,4 +6,6 @@ RUN mkdir /etc/ansible
 
 ADD ansible.cfg /etc/ansible/ansible.cfg
 
+RUN echo "gitlab-runner ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
 CMD ["run", "--user=gitlab-runner", "--working-directory=/home/gitlab-runner"]
